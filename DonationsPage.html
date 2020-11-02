@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/DonationsPage.css" />
+
+</head>
+
+<body>
+
+
+<template>
+    <div id = "index">
+        <h1 id = "main-heading">Fixer Currency API Demo with Vue.JS</h1>
+        <div id = "input-container">
+            <span class = "input-text">Convert</span>
+            <select id = "from-currency" v-model = "fromCurrency">
+                <option value = "">Select currency</option>
+                <option value = "USD">US Dollar (USD)</option>
+                <option value = "GBP">Pound Sterling (GBP)</option>
+                <option value = "EUR">Euro (EUR)</option>
+                <option value = "AED">United Arab Emirates dirham (AED)</option>
+            </select>
+            <input type = "number" id = "amount" placeholder="Amount" v-model = "amount">
+            <span class = "input-text">To</span>
+            <select id = "to-currency" v-model = "toCurrency">
+                <option value = "">Select currency</option>
+                <option value = "AED">United Arab Emirates dirham (AED)</option>
+                <option value = "EUR">Euro (EUR)</option>
+                <option value = "GBP">Pound Sterling (GBP)</option>
+                <option value = "USD">US Dollar (USD)</option>
+            </select>
+          
+            <button type = "button" id = "convert-btn" @click = "clickConvert()">Convert</button>
+            <!-- <button type = "button" id = "clear-btn" @click = "clear()">Clear</button> -->
+        </div>
+        <div id = "result-container" v-if = "convertClicked">
+            <h2 id = "result" v-if = "!loading">
+                <span id = "from-span">{{amount}} {{fromCurrency}}</span> = <span id = "to-span">{{result}} {{toCurrency}}</span>
+            </h2>
+            <h2 v-else>Loading...</h2>
+        </div>
+        <History v-if = "getHistory"/>
+    </div>
+</template>
+    
+
+
+<script>
+import History from './History'
+import { mapGetters } from 'vuex'
+export default {
+    name: 'Index', 
+    components: {
+        History,
+    },
+    data() {
+        return {
+            apiKey: '<YOUR_RAPIDAPI_KEY>',
+            fromCurrency: '',
+            toCurrency: '',
+            amount: 0,
+            result: 0,
+            convertClicked: false,
+            loading: false,
+        }
+    },
+    methods: {
+        clickConvert() {
+            if(!(this.fromCurrency == '' || this.toCurrency == '' || (this.amount <= 0) || this.fromCurrency == this.toCurrency)) {
+                this.convertClicked = true
+                
+            }
+            this.convert()
+        },
+        convert() {
+            if(this.fromCurrency == '' || this.toCurrency == '' || (this.amount <= 0) || this.fromCurrency == this.toCurrency) {
+                alert("Please check your inputs and try again")
+            }
+            else {
+                this.loading = true
+                let uri = 'https://fixer-fixer-currency-v1.p.rapidapi.com/convert?from=' + this.fromCurrency + '&to=' + this.toCurrency + '&amount=' + this.amount
+                fetch(uri, {
+                    "method": "GET",
+                    "headers": {
+                        "x-rapidapi-host": "fixer-fixer-currency-v1.p.rapidapi.com",
+                        "x-rapidapi-key": this.apiKey
+                    }
+                })
+                .then(response => {
+                    if(response.ok) {
+                        response.json()
+                        .then(response1 => {
+                            this.result = response1.result 
+                            this.loading = false
+                            this.$store.commit('addToHistory',{fromCurrency: this.fromCurrency, toCurrency: this.toCurrency, amount: this.amount, result: this.result})
+                        })
+                    }
+                })
+                .catch(err => {
+                    alert("There was a problem fetching the results. Please try again." + err)
+                })
+            } 
+        },
+        clear() {
+            this.amount = 0
+            this.fromCurrency = ''
+            this.toCurrency = ''
+            this.convertClicked = false
+        }
+    },
+     watch: {
+        amount: function() {
+            this.convertClicked = false
+        },
+        fromCurrency: function() {
+             this.convertClicked = false
+        },
+        toCurrency: function() {
+             this.convertClicked = false
+        }
+    },  
+    computed: {
+        ...mapGetters([
+            'getHistory'
+        ])
+    } 
+} //API: f0251fa25ebe163f77d76b95e1bfdf67
+
+</script>
+    
+        </body>
+</html>
