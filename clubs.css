@@ -1,4 +1,19 @@
-html {background-color: grey;}
-body {background-color: #4169e1;}
+html {background-color: #005daa;}
 
- #sigma {color: green;}
+nav {background-color: #002847}
+
+header {text-align: center;}
+
+.container {border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;}
+
+h2 {text-align: center;
+    background-color: #cccccc;}
+
+#nav1 {color: blue;}
+
+#nav2 {color: #ff0080;}
+
+#nav3 {color: red;}
+
