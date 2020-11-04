@@ -11,11 +11,16 @@ header {text-align: center;}
 h2 {text-align: center;
     background-color: #cccccc;}
 
+.center {display: block;
+         margin-left: auto;
+         margin-right: auto;}
+
 #nav1 {color: blue;}
 
 #nav2 {color: #ff0080;}
 
-#nav3 {color: red;}
+#nav3 {color: #e60000;}
 
 #nav4 {color: #e6b800;}
 
+#nav5 {color: #b13f44;}
