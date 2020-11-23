@@ -11,8 +11,11 @@
         <link rel="stylesheet" href="css/bootstrap.css.map" />
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/bootstrap.min.css.map" />
+        <link rel="stylesheet" href="css/MainPage.css" />
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>   
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        
+        <script src="js/MainPage/mainpage.js" defer></script>
         <script> 
         $(function(){
           $("#header").load("js/nav/header.html"); 
@@ -23,12 +26,64 @@
 
 <body>
     
+
+
 <div id="header"></div>
 <!--Remaining section-->
+<main class="row"> 
+            <aside class="col-md-2">
+                <div>
+        
+                <div class="Col">
+                    
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="#">Africa</a></li>
+                        <li class="list-group-item"><a href="#">Asia</a></li>
+                        <li class="list-group-item"><a href="#">Europe</a></li>
+                        <li class="list-group-item"><a href="#">North America</a></li>
+                        <li class="list-group-item"><a href="#">South America</a></li>
+                    </ul>
+                </div> 
+            </div>
+       </aside>
+    <div class ="col-md-10">
+                <div class="row">
+                    
+                  
+                    <div class="col-md-8">
+                         <figure id="featured">
+                                <img src="pictures/MainPage/medium/Clocktower.png" title="Faulkner University" alt="big version" />
+                                
+                            </figure>
+                            <div id="thumbnails">
+                                <img src="pictures/MainPage/small/Clocktower.png" title="Faulkner University ClockTower" alt="Battle"/>
+                                <img src="pictures/MainPage/small/Court.png" title="Faulkner BasketBall" alt="Faulkner BasketBall" />
+                                <img src="pictures/MainPage/small/Drive.png" title="Faulkner Entrance" alt="Faulkner Entrance" />
+                                <img src="pictures/MainPage/small/HPBuilding.png" title="Harris Parker Building" alt="Harris Parker Building"/>
+                                
 
+                            </div>
+                        
+                    </div>
+                 
+                    <div class="col-md-4">
+                        <h2>Join A Faulkner Social Club Today!</h2>
 
-
-    <p>Test Content</p>
+                        <div class="panel panel-default">
+                            <div>
+                                <ul class="panel-body">
+                                    <li><p>Joining a Social Club is a great way to interact with your peers! Find what suits you best!</p></li>
+                                    <li><a href="#">Alpha</a></li>
+                                    <li><a href="#">Epsilon</a></li>
+                                    <li><a href="#">Kappa</a></li>
+                                    <li><a href="#">Sigma</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+        </div>
+</main>
     
 <div id="footer"></div>
 </body>

@@ -1,0 +1,23 @@
+nav,.nav-link{
+    color:white;
+}
+#Flogo{
+  width:50%;
+  height:50%;
+  
+}
+.topHeaderRow{
+    background-color:#3b3b3b;
+}
+#list-group{
+    background-color:white;
+    margin:.2em .2em .2em .2em;
+}
+#Col{
+    color:white;
+    font-size:120%;
+    text-indent:1em;
+}
+.thumbnails{
+    width:50%;
+}
