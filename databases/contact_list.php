@@ -1,8 +1,11 @@
 <?php
 include 'header.php';
 
+
+
 ?>
 
+    <h1>Contact List</h1>
 
 <table>
         <thead>
@@ -27,6 +30,19 @@ include 'header.php';
         </tbody>
     </table>
 
+    <button id='back'>
+        Go Add a Contact
+    </button>
+
+<br>
+<br>
+
+    <script>
+        var back = document.getElementById("back");
+        back.addEventListener('click', function(){
+          window.location.href = '/group-project-nikki-conor-acacia/databases/AddContact.php';  
+        });
+    </script>
 
 <?php
     include 'footer.php';
