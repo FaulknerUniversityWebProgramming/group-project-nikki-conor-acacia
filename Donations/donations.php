@@ -6,17 +6,21 @@ include 'header.php';
  $msg = "";
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         
-        $stmt = $conn->prepare("INSERT INTO contact(first_name, last_name, email, comment) VALUES (:firstname, :lastname. :email, :comment)");
+        $stmt = $conn->prepare("INSERT INTO donations(first_name, last_name, number, email, amountEntered, amountWanted) VALUES (:firstname, :lastname, :number, :email, :amountEntered, :amountWanted)");
         $stmt->bindParam(":firstname", $firstname);
         $stmt->bindParam(":lastname", $lastname);
+        $stmt->bindParam(":number", $number);
         $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":comment", $comment);
+        $stmt->bindParam(":amountEntered", $amountEntered);
+        $stmt->bindParam(":amountEntered", $amountWanted);
 
         
         $firstname = $_POST["first_name"];
         $lastname = $_POST["last_name"];
+        $number = $_POST["number"];        
         $email = $_POST["email"];
-        $comment = $_POST["comment"];
+        $amountEntered = $_POST["amountEntered"];
+        $amountWanted = $_POST["amountWanted"];
 
         
         $stmt->execute();

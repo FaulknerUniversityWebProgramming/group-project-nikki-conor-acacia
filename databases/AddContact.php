@@ -6,7 +6,7 @@ include 'header.php';
  $msg = "";
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         
-        $stmt = $conn->prepare("INSERT INTO contact(first_name, last_name, email, comment) VALUES (:firstname, :lastname. :email, :comment)");
+        $stmt = $conn->prepare("INSERT INTO contact(first_name, last_name, email, comment) VALUES (:firstname, :lastname, :email, :comment)");
         $stmt->bindParam(":firstname", $firstname);
         $stmt->bindParam(":lastname", $lastname);
         $stmt->bindParam(":email", $email);
