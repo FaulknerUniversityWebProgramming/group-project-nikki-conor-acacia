@@ -2,7 +2,7 @@
 include "/databases/header.php";
 //logout
 setcookie("email", "", time()-3600);
-header("location:login.php");
+header("location: MainFile.html");
 
 
 // Delete account
@@ -15,7 +15,7 @@ if($result){
  echo " <a href='MainFile.html' >Click here</a> to go back. ";
  echo "</div> ";
 } elseif(!isset($loggedin_session) || $loggedin_session==NULL) {
- header("Location: register.php");
+ header("Location: MainFile.html");
 } else {
  echo "Unable to delete Your Account";
 }
