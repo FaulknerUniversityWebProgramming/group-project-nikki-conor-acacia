@@ -19,7 +19,7 @@ if(isset($_POST["login"]))
  else
  {
   $query = "SELECT * FROM user WHERE email = :email";
-  $statement = $connect->prepare($query);
+  $statement = $conn->prepare($query);
   $statement->execute(
    array(
     'email' => $_POST["email"]
