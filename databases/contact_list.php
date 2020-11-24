@@ -18,9 +18,9 @@ include 'header.php';
         </thead>
         <tbody>
             <?php 
-            $query = $conn->query("SELECT * FROM contact");
+            $query = $conn->query("SELECT contact.first_name, contact.last_name, contact.email, contact.comment FROM contact");
                 foreach($query as $contact){
-                    echo "<tr><td>".$contact['first_name']."</td><td>".$contact['last_name']."</td><td>".$contact['email']."</td></tr>";
+                    echo "<tr><td>".$contact['first_name']."</td><td>".$contact['last_name']."</td><td>".$contact['email']."</td><td>".$contact['comment']."</td></tr>";
                  //   echo "<td><a href='/www/editDept.php?deptNo=".urlencode($dept['dept_no'])."'>Edit</a></td>";
                   //  echo "<td><a href='#' onclick='deleteDept(\"".$dept['dept_name']."\",\"".urlencode($dept['dept_no'])."\")'>Delete</a></td></tr>";
 
