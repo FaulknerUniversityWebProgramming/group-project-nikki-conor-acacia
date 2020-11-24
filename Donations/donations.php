@@ -1,3 +1,44 @@
+<?php
+
+include 'header.php';
+
+
+ $msg = "";
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        
+        $stmt = $conn->prepare("INSERT INTO contact(first_name, last_name, email, comment) VALUES (:firstname, :lastname. :email, :comment)");
+        $stmt->bindParam(":firstname", $firstname);
+        $stmt->bindParam(":lastname", $lastname);
+        $stmt->bindParam(":email", $email);
+        $stmt->bindParam(":comment", $comment);
+
+        
+        $firstname = $_POST["first_name"];
+        $lastname = $_POST["last_name"];
+        $email = $_POST["email"];
+        $comment = $_POST["comment"];
+
+        
+        $stmt->execute();
+        
+        $msg = "Record inserted successfully";
+    }
+
+?>
+<?php
+        if(strlen($msg) > 0){
+            echo "<strong>".$msg."</strong>";
+        }
+    ?>
+
+
+
+
+
+
+
+
+
 <h1>Donations Page</h1>
 <h3>Interested in making a donation to a social club?</h3>
 <h3>Fill out the form below!!</h3>
@@ -95,3 +136,23 @@
         <br>
     </form>
 </div>
+
+
+<button id='back'>
+        Go to Main Page
+    </button>
+
+
+    <script>
+        var back = document.getElementById("back");
+        back.addEventListener('click', function(){
+          window.location.href = '/group-project-nikki-conor-acacia/MainFile.html';  
+        });
+    </script>
+
+
+
+<?php
+include 'footer.php';
+
+?>
