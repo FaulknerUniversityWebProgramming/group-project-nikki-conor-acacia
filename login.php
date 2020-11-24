@@ -1,4 +1,4 @@
-<?php>
+<?php
 include("databases/header.php");
 
 if(isset($_COOKIE["type"]))
@@ -12,7 +12,7 @@ if(isset($_POST["login"]))
 {
  if(empty($_POST["email"]) || empty($_POST["password"]))
  {
-  $message = "<div class='alert alert-danger'>Both Fields are required</div>";
+  $message = '<div class="alert alert-danger">Both Fields are required</div>';
  }
  else
  {
@@ -45,7 +45,7 @@ if(isset($_POST["login"]))
   }
   else
   {
-   $message = "<div class='alert alert-danger'>Wrong Email Address</div>";
+   $message = '<div class="alert alert-danger">Wrong Email Address</div>';
   }
  }
 }
