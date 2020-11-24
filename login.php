@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/css/login.css" media="screen">
+<link rel="stylesheet" href="login.css" media="screen">
 <?php
 include "/databases/header.php";
 
