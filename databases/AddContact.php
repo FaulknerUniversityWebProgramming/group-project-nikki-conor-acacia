@@ -55,19 +55,29 @@ include 'header.php';
 </div>
 
 
- <button id='back'>
+ <button id='backC'>
         Go to Contact List
+    </button>
+
+
+    <script>
+        var back = document.getElementById("backC");
+        back.addEventListener('click', function(){
+          window.location.href = '/group-project-nikki-conor-acacia/databases/contact_list.php';  
+        });
+    </script>
+
+<button id='back'>
+        Go to Main Page
     </button>
 
 
     <script>
         var back = document.getElementById("back");
         back.addEventListener('click', function(){
-          window.location.href = '/group-project-nikki-conor-acacia/databases/contact_list.php';  
+          window.location.href = '/group-project-nikki-conor-acacia/MainFile.html';  
         });
     </script>
-
-
 
 <?php
 include 'footer.php';

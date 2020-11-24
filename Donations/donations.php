@@ -6,12 +6,14 @@ include 'header.php';
  $msg = "";
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         
-        $stmt = $conn->prepare("INSERT INTO donations(first_name, last_name, number, email, amountEntered, amountWanted) VALUES (:firstname, :lastname, :number, :email, :amountEntered, :amountWanted)");
+        $stmt = $conn->prepare("INSERT INTO donations(first_name, last_name, number, email, ConversionFrom, amountEntered, ConversionTo, amountWanted) VALUES (:firstname, :lastname, :number, :email, :ConversionFrom, :amountEntered, :ConversionTo, :amountWanted)");
         $stmt->bindParam(":firstname", $firstname);
         $stmt->bindParam(":lastname", $lastname);
         $stmt->bindParam(":number", $number);
         $stmt->bindParam(":email", $email);
+        $stmt->bindParam(":ConversionFrom", $ConversionFrom);
         $stmt->bindParam(":amountEntered", $amountEntered);
+        $stmt->bindParam(":ConversionTo", $ConversionTo);
         $stmt->bindParam(":amountEntered", $amountWanted);
 
         
@@ -19,7 +21,9 @@ include 'header.php';
         $lastname = $_POST["last_name"];
         $number = $_POST["number"];        
         $email = $_POST["email"];
+        $ConversionFrom = $_POST["ConversionFrom"];        
         $amountEntered = $_POST["amountEntered"];
+        $ConversionTo = $_POST["ConversionTo"];                
         $amountWanted = $_POST["amountWanted"];
 
         
@@ -69,7 +73,7 @@ include 'header.php';
         <br />
         <br />
         <label for="amountEntered">Amount Entered: </label>
-        <select id="filterMoney">
+        <select name = 'ConversionFrom' id="filterMoney">
                <option value="0">USD</option>
                <option value="1">AED</option>
                <option value="2">AFN</option>
@@ -103,7 +107,7 @@ include 'header.php';
         
         
         <label for="amountWanted">Amount Wanted: </label>
-        <select id="filterCurrency">
+        <select name='ConversionTo' id="filterCurrency">
                <option value="0">USD</option>
                <option value="1">AED</option>
                <option value="2">AFN</option>
