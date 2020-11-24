@@ -2,13 +2,22 @@ nav,.nav-link{
     color:white;
 }
 #ContentNav{
-    margin-right:8em;
+    margin-right:6em;
+    margin-left:2em;
 }
 #Flogo{
   width:50%;
   height:50%;
-  
+  margin-left:6em;
 }
+#LogoTxt{
+    text-align:justify;
+    width:100%;
+    height:100%;
+    margin-right:2em;
+    margin-left:2em;
+}
+
 .topHeaderRow{
     background-color:#3b3b3b;
 }
