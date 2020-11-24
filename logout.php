@@ -1,8 +1,9 @@
 <?php 
 include "/databases/header.php";
 //logout
-setcookie("email", "", time()-3600);
-header("location: MainFile.html");
+setcookie("type", "", time()-3600);
+
+header("location:login.php");
 
 
 // Delete account
