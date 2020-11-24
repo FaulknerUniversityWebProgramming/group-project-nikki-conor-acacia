@@ -1,4 +1,6 @@
+<link rel="stylesheet" href="/css/register.css" media="screen">
 <?php
+include "/databases/header.php";
 $error_message = "";$success_message = "";
 
 	// make new user
@@ -55,4 +57,7 @@ $error_message = "";$success_message = "";
        header('Location: MainFile.html');
 		}
 	}
+?>
+<?php
+include "/databases/footer.php";
 ?>
