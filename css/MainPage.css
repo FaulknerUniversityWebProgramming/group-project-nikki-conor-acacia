@@ -1,6 +1,9 @@
 nav,.nav-link{
     color:white;
 }
+#ContentNav{
+    margin-right:8em;
+}
 #Flogo{
   width:50%;
   height:50%;
