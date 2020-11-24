@@ -1,9 +1,9 @@
 var figure = document.querySelector("#featured");
 var image = figure.getElementsByTagName('img')[0];
-var caption = figure.getElementsByTagName('figcaption')[0];
-
-
-
+var images =["pictures/MainPage/medium/Clocktower.png",
+             "pictures/MainPage/medium/Court.png",
+             "pictures/MainPage/medium/Drive.png",
+             "pictures/MainPage/medium/HPBuilding.png"];
 document.getElementById("thumbnails").onclick = function(event) {
 let target = event.target;
 enlarge(target)
@@ -12,20 +12,18 @@ enlarge(target)
 
 function enlarge(target) {
         image.src = target.src.replace("small", "medium");
-        image.title = target.title;
-        caption.innerHTML = target.title;
-        
+        image.title = target.title;    
+}
+var imageIndex = 0;
+function changeImage() {
+  image.setAttribute("src",images[imageIndex]);
+  imageIndex++;
+  if (imageIndex >= images.length) {
+    imageIndex = 0;
+  }
 }
 
-image.onmouseover = function() {mymouseover()};
-image.onmouseout = function() {mymouseout()};
+setInterval(changeImage,8000);
 
-window.onload = function mymouseover() {
-        caption.style.transition = "opacity 1s";
-        caption.style.opacity = 0.8;
-}
 
-window.onload = function mymouseout() {
-        caption.style.transition = "opacity 1s";
-        caption.style.opacity = 0;
-}
+
