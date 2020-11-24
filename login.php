@@ -1,35 +1,54 @@
+
 <link rel="stylesheet" href="login.css" media="screen">
-<?php
 include "/databases/header.php";
 
-//exsisting users
-if(isset($_POST['but_submit'])){
+<?php
+if(isset($_COOKIE["email"]))
+{
+ header("location: MainFile.html");
+}
 
-    $email = mysqli_real_escape_string($conn,$_POST['txt_email']);
-    $password = mysqli_real_escape_string($conn,$_POST['txt_password']);
+$message = '';
 
-    if ($email != "" && $password != ""){
-
-        $sql_query = "select count(*) as id from user where email='".$email."' and password='".$password."'";
-        $result = mysqli_query($conn,$sql_query);
-        $row = mysqli_fetch_array($result);
-
-        $count = $row['id'];
-
-        if($count > 0){
-            $_SESSION['email'] = $email;
-            header('Location: MainFile.html');
-        }else{
-            echo "Invalid email and/or password";
-        }
+if(isset($_POST["login"]))
+{
+ if(empty($_POST["email"]) || empty($_POST["password"]))
+ {
+  $message = "<div class='alert alert-danger'>Both Fields are required</div>";
+ }
+ else
+ {
+  $query = "SELECT * FROM user WHERE email = :email";
+  $statement = $connect->prepare($query);
+  $statement->execute(
+   array(
+    'email' => $_POST["email"]
+   )
+  );
+  $count = $statement->rowCount();
+  if($count > 0)
+  {
+   $result = $statement->fetchAll();
+   foreach($result as $row)
+   {
+    if(password_verify($_POST["password"], $row["password"]))
+    {
+     setcookie("email", $row["email"], time()+3600);
+     header("location: MainFile.html");
     }
-  if($email == '' || $password == ''){
-			$isValid = false;
-			$error_message = "Please fill all fields.";
-		}
+    else
+    {
+     $message = '<div class="alert alert-danger">Wrong Password</div>';
+    }
+   }
+  }
+  else
+  {
+   $message = "<div class='alert alert-danger'>Wrong Email Address</div>";
+  }
+ }
 }
 ?>
-
 <?php
 include "/databases/footer.php";
 ?>
