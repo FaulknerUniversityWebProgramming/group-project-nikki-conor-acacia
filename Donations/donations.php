@@ -2,9 +2,13 @@
 <h3>Interested in making a donation to a social club?</h3>
 <h3>Fill out the form below!!</h3>
 
+        <link rel="stylesheet" href="../css/donations.css"/>
 
+
+<div>
+    
     <form method='post' action="<?php echo $_SERVER['PHP_SELF']?>">
-          <label for="fname">Full Name: </label>
+        <label for="fname">Full Name: </label>
         <input type="text" placeholder='First Name' name='first_name' required />
         <input type='text' placeholder='Last Name' name='last_name' required />
         <br />
@@ -87,6 +91,7 @@
         <input type='text' placeholder='Amount' name='amountWanted' />
         <br>
         <br>
-        <br>
         <input type='submit' name='submit' value='Submit' />
+        <br>
     </form>
+</div>

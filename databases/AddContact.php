@@ -32,24 +32,27 @@ include 'header.php';
     ?>
 <h1>Contact Us!!</h1>
 
+        <link rel="stylesheet" href="contact.css"/>
 
-
-    <form method='post' action="<?php echo $_SERVER['PHP_SELF']?>">
-        <input type="text" placeholder='First Name' name='first_name' required />
+<div>
+    
+    <form method='post' id='form' action="<?php echo $_SERVER['PHP_SELF']?>">
+        <input type="text" id='first' placeholder='First Name' name='first_name' required />
         <br />
         <br />
-        <input type='text' placeholder='Last Name' name='last_name' required />
+        <input type='text' id='last' placeholder='Last Name' name='last_name' required />
         <br />
         <br />
-        <input type='text' placeholder='Email Address' name='email' required />
+        <input type='email' id='email' placeholder='Email Address' name='email' required />
         <br />
         <br />
-        <input type='text' placeholder='Comment' name='comment' required />
+        <input type='text' id='comment' placeholder='Comment' name='comment' required />
         <br>
         <br>
         <br>
-        <input type='submit' name='submit' value='Submit' />
+        <input type='submit' id='submit' name='submit' value='Submit' />
     </form>
+</div>
 
 
  <button id='back'>
