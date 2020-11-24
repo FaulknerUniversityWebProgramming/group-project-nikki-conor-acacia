@@ -46,3 +46,19 @@ nav,.nav-link{
 #MainIMG{
     width:100%;
 }
+#Submitbot{
+    width:100%; 
+    margin-top:.5em;
+}
+#FSubmitbut{
+    width:100%; 
+    margin-top:.5em;
+    background-color:#007bff;
+    color:white;
+}
+.SM{
+    width:5%;
+}
+.media-object{
+    width:20%;
+}
