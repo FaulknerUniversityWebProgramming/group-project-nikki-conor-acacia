@@ -10,11 +10,11 @@ if(isset($_POST['but_submit'])){
 
     if ($email != "" && $password != ""){
 
-        $sql_query = "select count(*) as cntUser from users where username='".$email."' and password='".$password."'";
+        $sql_query = "select count(*) as id from user where email='".$email."' and password='".$password."'";
         $result = mysqli_query($conn,$sql_query);
         $row = mysqli_fetch_array($result);
 
-        $count = $row['cntUser'];
+        $count = $row['id'];
 
         if($count > 0){
             $_SESSION['email'] = $email;
