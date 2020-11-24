@@ -1,8 +1,9 @@
-<?php
-include "/databases/header.php";
-if(isset($_COOKIE["email"]))
+<?php>
+include("databases/header.php");
+
+if(isset($_COOKIE["type"]))
 {
- header("location: MainFile.html");
+ header("location:config.php");
 }
 
 $message = '';
@@ -15,7 +16,10 @@ if(isset($_POST["login"]))
  }
  else
  {
-  $query = "SELECT * FROM user WHERE email = :email";
+  $query = "
+  SELECT * FROM user 
+  WHERE email = :email
+  ";
   $statement = $conn->prepare($query);
   $statement->execute(
    array(
@@ -30,8 +34,8 @@ if(isset($_POST["login"]))
    {
     if(password_verify($_POST["password"], $row["password"]))
     {
-     setcookie("email", $row["email"], time()+3600);
-     header("location: MainFile.html");
+     setcookie("type", $row["type"], time()+3600);
+     header("location:config.php");
     }
     else
     {
@@ -46,6 +50,36 @@ if(isset($_POST["login"]))
  }
 }
 ?>
-<?php
-include "/databases/footer.php";
-?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ </head>
+ <body>
+  <br />
+  <div class="container">
+    <div class="panel panel-default">
+
+    <div class="panel-heading">Login</div>
+    <div class="panel-body">
+     <span><?php echo $message; ?></span>
+     <form method="post">
+      <div class="form-group">
+       <label>Email</label>
+       <input type="text" name="email" id="email" class="form-control" />
+      </div>
+      <div class="form-group">
+       <label>Password</label>
+       <input type="password" name="password" id="password" class="form-control" />
+      </div>
+      <div class="form-group">
+       <input type="submit" name="login" id="login" class="btn btn-info" value="Login" />
+      </div>
+     </form>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

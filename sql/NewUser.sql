@@ -4,9 +4,9 @@ CREATE TABLE IF NOT EXISTS new_user (
   lname varchar(50) NOT NULL,
   email varchar(70) NOT NULL,
   password varchar(60) NOT NULL,
+  type enum(master, user) NOT NULL
   timemodified timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO user (id, username, fname, lname, password, email) VALUES
-  (1, xfairley717141, Xfairley717141, Xyquirreah, fairley, password123, Xyquirreah.fairley@faulkner.edu);
-
+INSERT INTO user (id, username, fname, lname, password, email, type) VALUES
+  (1, xfairley717141, Xfairley717141, Xyquirreah, fairley, password123, Xyquirreah.fairley@faulkner.edu, type);
