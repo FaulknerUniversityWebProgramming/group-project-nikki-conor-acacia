@@ -63,7 +63,7 @@ nav,.nav-link{
     margin-top:.5em;
 }
 #FSubmitbut{
-    width:100%; 
+    width:60%; 
     margin-top:.5em;
     background-color:#007bff;
     color:white;
@@ -73,4 +73,7 @@ nav,.nav-link{
 }
 .media-object{
     width:20%;
+}
+#ContactImg{
+    width:40%;
 }
