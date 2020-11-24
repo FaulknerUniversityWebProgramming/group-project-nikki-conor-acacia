@@ -13,17 +13,17 @@
         <input type='text' placeholder='Last Name' name='last_name' required />
         <br />
         <br />
-          <label for="fname">Phone Number: </label>
+          <label for="number">Phone Number: </label>
 
         <input type='text' placeholder='Phone Number' name='number' required />
         <br />
         <br />
-          <label for="fname">Email Address: </label>
+          <label for="email">Email Address: </label>
 
         <input type='text' placeholder='Email Address' name='email' required />
         <br />
         <br />
-        <label for="fname">Amount Entered: </label>
+        <label for="amountEntered">Amount Entered: </label>
         <select id="filterMoney">
                <option value="0">USD</option>
                <option value="1">AED</option>
@@ -53,11 +53,11 @@
                <option value="25">BYN</option>
                <option value="26">BYR</option>
                <option value="27">BZD</option>
-            
-
         </select>
                 <input type='text' placeholder='Amount' name='amountEntered' required />
-        <label for="fname">Amount Wanted: </label>
+        
+        
+        <label for="amountWanted">Amount Wanted: </label>
         <select id="filterCurrency">
                <option value="0">USD</option>
                <option value="1">AED</option>
