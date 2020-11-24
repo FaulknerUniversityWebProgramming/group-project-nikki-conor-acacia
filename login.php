@@ -12,7 +12,7 @@ if(isset($_POST["login"]))
 {
  if(empty($_POST["email"]) || empty($_POST["password"]))
  {
-  $message = '<div class="alert alert-danger">Both Fields are required</div>';
+  $echo Both Fields are required
  }
  else
  {
@@ -39,16 +39,12 @@ if(isset($_POST["login"]))
     }
     else
     {
-     $message = '<div class="alert alert-danger">Wrong Password</div>';
+     $echo Wrong Password and/or email
     }
    }
   }
-  else
-  {
-   $message = '<div class="alert alert-danger">Wrong Email Address</div>';
   }
  }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,7 +60,7 @@ if(isset($_POST["login"]))
 
     <div class="panel-heading">Login</div>
     <div class="panel-body">
-     <span><?php echo $message; ?></span>
+     <span><?php echo; ?></span>
      <form method="post">
       <div class="form-group">
        <label>Email</label>
@@ -76,6 +72,8 @@ if(isset($_POST["login"]))
       </div>
       <div class="form-group">
        <input type="submit" name="login" id="login" class="btn btn-info" value="Login" />
+       <input href="register.html" type="submit" name="register" id="register" class="btn btn-info" value="Register" />
+
       </div>
      </form>
     </div>
