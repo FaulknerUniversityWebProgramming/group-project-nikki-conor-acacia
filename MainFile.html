@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="css/bootstrap.css.map" />
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/bootstrap.min.css.map" />
-        <link rel="stylesheet" href="css/MainPage.css" />
+        <link rel="stylesheet" href="css/MainPage.css"/>
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         
@@ -35,15 +35,22 @@
                 <div>
         
                 <div class="Col">
-                    
+                    <div id="ColTitle" >Quick Links</div>
                     <ul class="list-group">
-                        <li class="list-group-item"><a href="#">Africa</a></li>
-                        <li class="list-group-item"><a href="#">Asia</a></li>
-                        <li class="list-group-item"><a href="#">Europe</a></li>
-                        <li class="list-group-item"><a href="#">North America</a></li>
-                        <li class="list-group-item"><a href="#">South America</a></li>
+                        <li id="QuickLink" class="list-group-item"><a href="#">Donate</a></li> 
+                        <li id="QuickLink" class="list-group-item"><a href="#">Contact Us</a></li>
                     </ul>
                 </div> 
+                    <div class="Col">
+                    <div id="ColTitle" >Join A Club!</div>
+                    <ul class="list-group">
+                        <li id="QuickLink" class="list-group-item"><a href="#">Alpha</a></li>
+                        <li id="QuickLink" class="list-group-item"><a href="#">Sigma</a></li>
+                        <li id="QuickLink" class="list-group-item"><a href="#">Kappa</a></li>
+                        <li id="QuickLink" class="list-group-item"><a href="#">Epsilon</a></li>
+                        
+                    </ul>
+                </div>
             </div>
        </aside>
     <div class ="col-md-10">
@@ -52,14 +59,14 @@
                   
                     <div class="col-md-8">
                          <figure id="featured">
-                                <img src="pictures/MainPage/medium/Clocktower.png" title="Faulkner University" alt="big version" />
+                                <img id="MainIMG"src="pictures/MainPage/medium/Clocktower.png" title="Faulkner University" alt="big version" />
                                 
                             </figure>
                             <div id="thumbnails">
-                                <img src="pictures/MainPage/small/Clocktower.png" title="Faulkner University ClockTower" alt="Battle"/>
-                                <img src="pictures/MainPage/small/Court.png" title="Faulkner BasketBall" alt="Faulkner BasketBall" />
-                                <img src="pictures/MainPage/small/Drive.png" title="Faulkner Entrance" alt="Faulkner Entrance" />
-                                <img src="pictures/MainPage/small/HPBuilding.png" title="Harris Parker Building" alt="Harris Parker Building"/>
+                                <img id="SmallIMG" src="pictures/MainPage/small/Clocktower.png" title="Faulkner University ClockTower" alt="Battle"/>
+                                <img id="SmallIMG" src="pictures/MainPage/small/Court.png" title="Faulkner BasketBall" alt="Faulkner BasketBall" />
+                                <img id="SmallIMG" src="pictures/MainPage/small/Drive.png" title="Faulkner Entrance" alt="Faulkner Entrance" />
+                                <img id="SmallIMG" src="pictures/MainPage/small/HPBuilding.png" title="Harris Parker Building" alt="Harris Parker Building"/>
                                 
 
                             </div>
@@ -73,10 +80,7 @@
                             <div>
                                 <ul class="panel-body">
                                     <li><p>Joining a Social Club is a great way to interact with your peers! Find what suits you best!</p></li>
-                                    <li><a href="clubs/alpha.html">Alpha</a></li>
-                                    <li><a href="clubs/epsilon.html">Epsilon</a></li>
-                                    <li><a href="clubs/kappa.html">Kappa</a></li>
-                                    <li><a href="clubs/sigma.html">Sigma</a></li>
+                                    <li class="pagination"><a href="clubs/alpha.html">Get Started!</a></li>
                                 </ul>
                             </div>
                         </div>
