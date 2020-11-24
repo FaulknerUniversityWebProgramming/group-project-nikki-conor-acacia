@@ -1,8 +1,5 @@
-
-<link rel="stylesheet" href="login.css" media="screen">
-include "/databases/header.php";
-
 <?php
+include "/databases/header.php";
 if(isset($_COOKIE["email"]))
 {
  header("location: MainFile.html");
